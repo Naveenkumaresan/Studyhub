@@ -220,9 +220,10 @@ cursor: pointer;
     .toast {
         max-width: 90%; 
         font-size: 0.8em;
-    }.modal {
-        margin: 20em 0 ;
     }
+/*     .modal {
+        margin: 20em 0 ;
+    } */
       
 
 }
