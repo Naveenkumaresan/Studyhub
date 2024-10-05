@@ -420,7 +420,7 @@ button:hover {
   cursor: pointer;
   
   }
-  .info >.dropdown >.dropdown-menu{
+/*   .info >.dropdown >.dropdown-menu{
    text-align: center;
    padding: 1px 2em;
   }
@@ -428,7 +428,7 @@ button:hover {
       margin: 0;
       border-bottom: 2px solid rgb(10, 11, 10);
       height: 40px;
-  }
+  } */
   
 .butt{
   display: flex;
