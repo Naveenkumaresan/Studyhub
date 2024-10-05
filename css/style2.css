@@ -290,6 +290,12 @@ cursor: pointer;
     transition: 1s all ease-in-out;
     color: white;
   }
+
+  @media (max-width: 480px) {
+    .modal-content {
+        width: 95%; /* Increase width for very small screens */
+    }
+}
   .disabled {
     pointer-events: none; 
     opacity: 0.5; 
