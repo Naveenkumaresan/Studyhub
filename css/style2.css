@@ -221,9 +221,9 @@ cursor: pointer;
         max-width: 90%; 
         font-size: 0.8em;
     }
-/*     .modal {
+    .modal {
         margin: 20em 0 ;
-    } */
+    }
       
 
 }
@@ -296,6 +296,13 @@ cursor: pointer;
     .modal-content {
         width: 95%; /* Increase width for very small screens */
     }
+}
+@media (max-width: 768px) {
+    .modal {
+        margin: -5em 0 ;
+    }
+      
+
 }
   .disabled {
     pointer-events: none; 
