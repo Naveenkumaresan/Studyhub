@@ -299,7 +299,7 @@ cursor: pointer;
 }
 @media (max-width: 768px) {
     .modal {
-        margin-top: -8em;
+        margin-top: 0em;
     }
       
 
