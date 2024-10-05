@@ -258,7 +258,7 @@ cursor: pointer;
     color: black;
   }
   .modal-content >ol>li{
-    text-align: justify;
+    text-align: start;
   }
   /* .modal-content > span{
     margin: 0 13.5em;
