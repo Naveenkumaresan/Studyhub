@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studyhub | DML</title>
+    <link rel="shortcut icon" href="img/BrandLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/ai.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="loader"></div>
+
+    <nav id="leftNavbar">
+        <a href="index.html">Home</a>
+        <a href="constraints.html">Constraints</a>
+        <a href="DDL.html">DDL</a>
+        <a href="DML.html">DML</a>
+        <a href="DCL.html">DCL</a>
+        <a href="TCL.html">TCL</a>
+        <a href="DQL.html">DQL</a>
+        <a href="Acidproperty.html">ACID PROPERITES</a>
+        <a href="Join.html">Joins</a>
+        <a href="Contact.html">Contact Us</a>
+      </nav>
+
+    <section class="container-fluid nb sticky-top">
+        <div class="head text-center">
+            <h1 class="text-start" id="studyhub">Studyhub</h1>
+        </div>
+
+        <div class="d-flex align-items-center info">
+            <div class="dropdown">
+                <button class="text-light dropdown-toggle d-flex align-items-center user-initial" id="userOptionsButton" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="User Options">
+                User
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userOptionsButton">
+                    <li><a class="dropdown-item" href="login.html" id="signInLink">Sign In</a></li>
+                    <li><a class="dropdown-item" href="profile.html" id="profileLink" style="display: none;">Profile</a></li>
+                    <li><a class="dropdown-item" href="#" id="signoutbutton" style="display: none;">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+      
+        
+
+        <div id="studyhubToggle">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </section>
+
+    <Section>
+        <div class="suhead">
+            <h1 class="tithed"> Data Manipulation Language (DML)</h1>
+     
+        <p class="container titpara">
+           DDL commands in SQL are used to manipulate data within the database. They primarily involve querying, inserting, updating, and deleting data from tables.
+           DML commands are essential for manipulating data within a database, allowing you to retrieve, insert, update, and delete records as needed. They form the core functionality for interacting with the data stored in SQL databases.
+        </p>
+
+    </div>
+    </Section>
+    <section class="container">
+        <div class="subhead">
+            <h2 class="text-start">Commands</h2>
+            <!-- <ol class="text-center">
+                <li><a href=""> CREATE</a></li>
+                <li><a href="">ALTER</a></li>
+                <li><a href="">Drop</a></li>
+                <li><a href="">Truncate</a></li>
+                <li><a href="">Rename</a></li>
+            </ol> -->
+        </div>
+    </section>
+    <section>
+        <div class="ddlcmd container">
+            <h4> INSERT</h4>
+            <p> Adds new records into a table.</p>
+     
+        <h6>Commands</h6> 
+        <div class="copy-text">
+            <input type="text" class="text myInput" value="INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);" id="textToCopy" readonly>
+            <!-- <button class="copy">
+                <i class="fa fa-clone" onclick="myFunction(this)"> Copy </i>
+            </button>  -->
+
+           
+        </div>
+        <h6>
+            Explanation:
+        </h6>
+        <p>
+            The INSERT command is used to add new records (rows) into a table. You specify the table name and the values to be
+            inserted into each column. If you don't provide values for all columns, you must specify the columns explicitly. Each
+            INSERT operation creates a new row in the table with the specified values.
+        </p>
+
+        <div>
+            <h6>
+                Example:
+            </h6>
+            <div class="copy-text">
+                <input type="text" value="insert into stud values ('ashwin',101,19,'anna nagar','aeronautical')" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+            <div>
+                <h6>
+                    1 row Created. </h6>
+            </div>
+
+
+            <div class="copy-text">
+                <input type="text" value="insert into stud values ('bhavesh',102,18,'nungambakkam','marine')" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+            <div>
+            <div>
+                <h6>
+                    1 row Created. </h6>
+            </div>
+
+            <div class="copy-text">
+                <input type="text" value="insert into stud values ('pruthvik',103,20,'anna nagar','aerospace');" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+        
+            <div>
+                <h6>1 row Created. </h6>
+            </div>
+
+            <div class="copy-text">
+                <input type="text" value="insert into stud values ('charith',104,20,'kilpauk','mechanical');" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button>  
+            </div>
+    
+            <div>
+                <h6>
+                    1 row Created. </h6>
+            </div>
+            <h6> The result table is</h6>
+
+      
+            <section class="assistant container">
+                <button class="talk" onclick=" Insertcmd()"><i class="fa-solid fa-robot"></i> HubTalk</button>
+                <!-- <button onclick="togglePause()">Pause</button> -->
+                <div class="content">
+                    <div id="wordsInsert"></div>
+                </div>
+            </section>
+
+
+            <div class=" table-responsive">
+                <table class="table table-bordered table-dark ">
+                    <thead>
+                      <tr>
+                        <th scope="col">SNAME</th>
+                        <th scope="col">SID</th>
+                        <th scope="col">SAGE</th>
+                        <th scope="col">SAREA</th>
+                        <th scope="col">SDEPT</th>
+                      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">ashwin</th>
+                        <td>101 </td>
+                        <td> 19 </td>
+                        <td>  annanagar </td>
+                        <td> aeronautical </td>
+                       
+                      </tr>
+                      <tr>
+                        <th scope="row">bhavesh </th>
+                        <td>102 </td>
+                        <td> 18 </td>
+                        <td>   nungambakkam </td>
+                        <td>marine </td>
+                      
+                      </tr>
+                      <tr>
+                        <th scope="row">pruthvik</th>
+                        <td>103 </td>
+                        <td> 20 </td>
+                        <td>  annanagar </td>
+                        <td> aerospace </td>
+    
+                      </tr>
+                      <tr>
+                        <th scope="row">charith</th>
+                        <td>104 </td>
+                        <td>20</td>
+                        <td>kilpauk</td>
+                        <td>mechanical</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <!-- <p class="mt-3">
+                In this example,INSERT INTO command adds a new row to the "Employees" table with values for the "FirstName", "LastName", "Age", and "Department" columns. -->
+        </div>
+    </div>
+    </section>
+
+
+    <section >
+       <div class="ddlcmd container">
+        <h4>UPDATE</h4>
+        <p>
+            Modifies existing records in a table.
+                </p>
+      <h6>Commands</h6> 
+      <div class="copy-text">
+        <input type="text" class="text" value=" UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;" id="textToCopy" readonly>
+            <!-- <button class="copy">
+                <i class="fa fa-clone "> Copy </i>
+            </button> -->
+       
+      </div>
+
+        <h6>
+            Explanation:
+        </h6>
+        <p>
+            The UPDATE command is used to modify existing records (rows) in a table. You specify which table to update and set new values for one or more columns. The WHERE clause is used to specify the rows to be updated based on certain conditions. If you omit the WHERE clause, all rows in the table will be updated.
+        </p>
+
+        <div>
+            <h6>
+                Example:
+            </h6>
+
+            <div class="copy-text">
+                <input type="text" value="alter table studs add ( spocket varchar2(20) )" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+            <div>
+                <h6>Table altered.</h6>
+            </div>
+
+            <div class="copy-text">
+                <input type="text" value=" update studs set spocket=750 where sid=101; " id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button>  
+            </div>
+            <div>
+                <h6>1 row Updated.</h6>
+            </div>
+            <div class="copy-text">
+                <input type="text" value=" update studs set spocket=500 where sid=102;" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+         
+            <div>
+                <h6>1 row Updated.</h6>
+            </div>
+
+            <div class="copy-text">
+                <input type="text" value=" update studs set spocket=250 where sid=103;" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+
+            <div>
+                <h6>
+                    1 row updated. </h6>
+            </div>
+
+            <div class="copy-text">
+                <input type="text" value="update studs set spocket=100 where sid=104;" id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+            <div>
+                <h6>1 row updated.</h6>
+            </div>
+            <section class="assistant container">
+                <button class="talk" onclick=" Updatecmd()"><i class="fa-solid fa-robot"></i> HubTalk</button>
+                <!-- <button onclick="togglePause()">Pause</button> -->
+                <div class="content">
+                    <div id="wordsUpdate"></div>
+                </div>
+            </section>
+
+            <h6> The result table is</h6>
+            <div class=" table-responsive">
+               
+                <table class="table table-bordered table-dark ">
+                    <thead>
+                      <tr>
+                        <th scope="col">SNAME</th>
+                        <th scope="col">SID</th>
+                        <th scope="col">SAGE</th>
+                        <th scope="col">SAREA</th>
+                        <th scope="col">SDEPT</th>
+                        <th scope="col">SSPOCKET</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">ashwin</th>
+                        <td>101 </td>
+                        <td> 19 </td>
+                        <td>  annanagar </td>
+                        <td> aeronautical </td>
+                        <td>750</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">bhavesh </th>
+                        <td>102 </td>
+                        <td> 18 </td>
+                        <td>   nungambakkam </td>
+                        <td>marine </td>
+                        <td>500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">pruthvik</th>
+                        <td>103 </td>
+                        <td> 20 </td>
+                        <td>  annanagar </td>
+                        <td> aerospace </td>
+                        <td>250</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">charith</th>
+                        <td>104 </td>
+                        <td>20</td>
+                        <td>kilpauk</td>
+                        <td>mechanical</td>
+                        <td>100</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <!-- <p class="mt-3">
+                In this example,UPDATE command changes the value of the "Age" column to 31 for the employee with the first name 'John' and last name 'Doe' in the "Employees" table.
+            </p> -->
+        </div>
+       </div>
+    </section>
+
+
+    <section >
+        <div class="ddlcmd container">
+         <h4>DELETE</h4>
+         <p>
+            Removes records from a table.
+        </p>
+       <h6>Commands</h6> 
+       <div class="copy-text">
+        <input type="text"class="text myInput" value="DELETE FROM table_name WHERE condition;" id="textToCopy" readonly>
+    </div> 
+         <h6>
+            Explanation:
+        </h6>
+        <p>
+            The DELETE command is used to remove records (rows) from a table. You specify the table name and use the WHERE clause to specify the rows to be deleted based on certain conditions. If you omit the WHERE clause, all rows in the table will be deleted, resulting in an empty table.
+        </p>
+
+        <div>
+            <h6>
+                Example:
+            </h6>
+            <div class="copy-text">
+                <input type="text" value="delete from studs where sid=101; " id="textToCopy" readonly>
+                <button class="copy" onclick="copyText(this)">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                </button> 
+            </div>
+            <div>
+                <h6>
+                    1 row deleted. </h6>
+            </div>
+
+            <section class="assistant container">
+                <button class="talk" onclick=" Deletecmd()"><i class="fa-solid fa-robot"></i> HubTalk</button>
+                <!-- <button onclick="togglePause()">Pause</button> -->
+                <div class="content">
+                    <div id="wordsDelete"></div>
+                </div>
+            </section>
+
+            <h6> The result table is</h6>
+            <div class="table-responsive">
+                 <table class="table  table-bordered table-dark ">
+                    <thead>
+                      <tr>
+                        <th scope="col">SNAME</th>
+                        <th scope="col">SID</th>
+                        <th scope="col">SAGE</th>
+                        <th scope="col">SAREA</th>
+                        <th scope="col">SDEPT</th>
+                        <th scope="col">SSPOCKET</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- <tr>
+                        <th scope="row">ashwin</th>
+                        <td>101 </td>
+                        <td> 19 </td>
+                        <td>  annanagar </td>
+                        <td> aeronautical </td>
+                        <td>750</td>
+                      </tr> -->
+                      <tr>
+                        <th scope="row">bhavesh </th>
+                        <td>102 </td>
+                        <td> 18 </td>
+                        <td>   nungambakkam </td>
+                        <td>marine </td>
+                        <td>500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">pruthvik</th>
+                        <td>103 </td>
+                        <td> 20 </td>
+                        <td>  annanagar </td>
+                        <td> aerospace </td>
+                        <td>250</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">charith</th>
+                        <td>104 </td>
+                        <td>20</td>
+                        <td>kilpauk</td>
+                        <td>mechanical</td>
+                        <td>100</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <p class="mt-3">
+                In this example,DELETE FROM command removes all rows from the "Employees" table where the value in the "Age" column is greater than 40.
+            </p>
+        </div>
+        </div>
+     </section>
+
+
+     <!-- <section >
+        <div class="ddlcmd container">
+         <h4>SELECT</h4>
+         <p>
+            Retrieves data from one or more tables based on specified conditions.
+        </p>
+       <h6>Commands</h6> 
+       <kbd>  
+        SELECT column1, column2, ...
+        FROM table_name
+        WHERE condition;
+             </kbd>
+             <h6>
+                Explanation:
+            </h6>
+            <p>
+                The SELECT command is used to fetch data from one or more tables in a database. It allows you to specify which columns to retrieve and filter the rows based on certain conditions using the WHERE clause. The result of a SELECT query is a result set containing the selected columns' values that meet the specified criteria.
+            </p>
+        </div>
+     </section> -->
+
+   
+     <section>
+        <div class="container mt-5">
+            <h2>Time For Quize😉</h2>      
+            <h4>Questions</h4>
+            <div class="quiz bg-transparent" id="quiz">
+                <div class="quiz-header">
+                  <h2 id="question">Question Text</h2>
+                  <ul class="qustlist">
+                   <li>
+                     <input type="radio" name="answer" id="a" class="answer">
+                     <label for="a" id="a_text">Answer</label>
+                   </li>
+                   <li>
+                     <input type="radio" name="answer" id="b" class="answer">
+                     <label for="b" id="b_text">Answer</label>
+                   </li>
+                   <li>
+                     <input type="radio" name="answer" id="c" class="answer">
+                     <label for="c" id="c_text">Answer</label>
+                   </li>
+                   <li>
+                     <input type="radio" name="answer" id="d" class="answer">
+                     <label for="d" id="d_text">Answer</label>
+                   </li>
+                 </ul>
+               </div>
+               <button id="submit" style="outline: 0; background-color: blue;color: aliceblue;border-radius: 10px;padding: 5px; margin-left: -0.5rem;">Submit</button>
+             </div>
+        </div>
+     </section>
+   
+
+<div class="butt" style="margin:0 1em; margin-top: 1em;">
+    <button class="but"><a href="DDL.html">Prev</a></button>
+<button class="but"><a href="DCL.html">Next</a></button>
+</div>
+  
+<!-- AI -->
+<section>
+    <div class="chatbot-icon">
+        <button class="btn btn-primary loading-aiimg" id="toggleChatbot">Ai-Hubs
+            <img src="img/ai-assistant.png" alt="AI Assistant" style="width: 30px; height: 30px; margin-left: 5px;" class="loading-aiimg">
+        </button>
+    </div>
+    
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header d-flex justify-content-between align-items-center">
+            <h5>Ai-Hubs  <img src="img/ai-assistant.png" alt="AI Assistant" style="width: 30px; height: 30px; margin-left: 2px;"></h5>
+            <i class="fa-solid fa-x" id="closeChatbot"></i>
+        </div>
+        <div class="chatbot-body">
+            <textarea class="form-control mb-3" id="questionInput" cols="30" rows="5" placeholder="Ask an SQL querying question..."></textarea>
+            <div class="grid">
+                <button class="btn btn-primary" id="generateAnswerBtn">Generate Answer</button>
+                <button class="btn btn-secondary" id="resetBtn">Reset</button>
+            </div>
+            <div class="mt-4">
+                <h5>Answer:</h5>
+                <pre class="answer-box" id="answerOutput"></pre>
+            </div>
+        </div>
+    </div>
+   </section>
+<!--  -->
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="text-center mt-5 bg-dark p-2">
+      <p class="fs-5">&COPY; Copyright Own by StudyHub</p>
+    </div>
+  </footer>
+
+<!-- Footer  -->
+
+    <script src="https://kit.fontawesome.com/def8c494cf.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/DML.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/voice.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/aihub.js"></script>  
+    <script>
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+        let SignoutBtn;
+        let SignInLink = document.getElementById("signInLink");
+        let ProfileLink = document.getElementById("profileLink");
+        let logoutTimer;
+        let signUpRedirectTimer; // Timer for sign-up redirection
+        
+        const Signout = () => {
+            sessionStorage.removeItem("user-creds");
+            sessionStorage.removeItem("user-info");
+            updateDropdown(); 
+            window.location.href = "index.html"; 
+        };
+        
+      
+        const redirectToSignUp = () => {
+          
+            if (!sessionStorage.getItem("user-creds")) {
+                signUpRedirectTimer = setTimeout(() => {
+                    window.location.href = "Login.html"; 
+                }, 10000); 
+            }
+        };
+        
+        
+        const clearSignUpRedirectTimer = () => {
+            clearTimeout(signUpRedirectTimer);
+        };
+        
+        const initializeLogoutTimer = () => {
+            clearTimeout(logoutTimer); 
+            if (sessionStorage.getItem("user-creds")) {
+                logoutTimer = setTimeout(() => {
+                    Signout(); 
+                }, 5 * 60 * 1000); 
+            }
+        };
+        
+        const updateDropdown = () => {
+            if (!sessionStorage.getItem("user-creds")) {
+                SignInLink.style.display = 'block'; 
+                ProfileLink.style.display = 'none'; 
+                if (SignoutBtn) SignoutBtn.style.display = 'none'; 
+                redirectToSignUp(); 
+            } else {
+                const userInfo = JSON.parse(sessionStorage.getItem("user-info"));
+                document.getElementById("userOptionsButton").textContent = userInfo.firstname;
+                SignInLink.style.display = 'none'; 
+                ProfileLink.style.display = 'block'; 
+                if (SignoutBtn) SignoutBtn.style.display = 'block'; 
+                clearSignUpRedirectTimer(); 
+                // initializeLogoutTimer(); 
+            }
+        };
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            SignoutBtn = document.getElementById("signoutbutton"); 
+            updateDropdown();
+    
+            // Check if the user is logged in before adding event listeners for user activity
+            if (sessionStorage.getItem("user-creds")) {
+                // Reset inactivity timer on user activity
+                document.addEventListener("click", initializeLogoutTimer);
+                document.addEventListener("keydown", initializeLogoutTimer);
+                document.addEventListener("mousemove", initializeLogoutTimer);
+            }
+    
+            // Add signout button listener after DOM content is loaded
+            if (SignoutBtn) {
+                SignoutBtn.addEventListener("click", Signout);
+            }
+        });
+    
+        const saveLastPage = () => {
+            sessionStorage.setItem("last-page", window.location.href);
+        };
+        window.addEventListener('beforeunload', saveLastPage);
+    
+        const onLoginSuccess = () => {
+            // sessionStorage.setItem("user-creds", JSON.stringify({username: 'user'})); 
+            // sessionStorage.setItem("user-info", JSON.stringify({firstname: 'John'})); 
+            updateDropdown(); 
+            redirectToLastPage(); 
+        };
+    </script>
+</body>
+</html>

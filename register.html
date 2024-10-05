@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <style>
+  ::-webkit-scrollbar {
+  display: none;
+}
+
+  .form-container {
+    max-width: 50%; /* Full width for small screens */
+    width: 400px; /* Default width for larger screens */
+    margin: 0px auto; /* Center the form vertically and horizontally */
+    padding:0 30px 30px 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Smooth rounded edges */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Modern shadow */
+    background-color: #f8f9fa; /* Subtle off-white background */
+    transition: all 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+/* For tablets and larger screens */
+@media (min-width: 768px) {
+    .form-container {
+        width: 500px; /* Increase width on medium screens */
+        margin: 100px auto; /* Adjust margin */
+    }
+}
+
+/* For small devices and smartphones */
+@media (max-width: 576px) {
+    .form-container {
+        max-width: 90%; /* Occupy most of the screen width */
+        padding: 20px;
+        margin: 100px 1em; /* Adequate margin on small devices */
+    }
+}
+
+/* For very small devices */
+@media (max-width: 375px) {
+    .form-container {
+        max-width: 95%; /* Occupy almost full width */
+        padding: 15px; /* Reduce padding for very small screens */
+        margin: 120px auto; /* Adjust margin for small screens */
+    }
+}
+
+/* Button styles */
+.btn-custom {
+    width: 100%; /* Full-width button */
+    padding: 12px 0; /* Larger padding for ease of click */
+    font-size: 18px; /* Bigger font for better readability */
+    font-weight: 600;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; /* Darken button color on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Input fields styling */
+.form-floating .form-control {
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
+    padding: 1.5rem 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-floating .form-control:focus {
+    border-color: #007bff;
+    box-shadow: none;
+}
+
+.text-center a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.text-center a:hover {
+    color: #0056b3;
+}
+
+
+  </style>
+  <body>
+    <div class="container form-container text-center">
+      <form action="" id="MainForm" class="container-md">
+          <h2 class="mb-4">SIGNUP</h2>
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="fnameInp" placeholder="First Name" required>
+              <label for="fnameInp">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="lnameInp" placeholder="Last Name" required>
+              <label for="lnameInp">Last Name</label>
+          </div>
+          <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="emailInp" placeholder="Email" required>
+              <label for="emailInp">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="passwordInp" placeholder="Password" required>
+              <label for="passwordInp">Password</label>
+          </div>
+          <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="confirmPasswordInp" placeholder="Re-enter Password" required>
+              <label for="confirmPasswordInp">Re-enter Password</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-custom" id="registerBtn">Register</button>
+          <div class="text-center mt-3">
+              <p>Already have an account? <a href="Login.html">Login</a></p>
+          </div>
+      </form>
+  </div>
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+    
+        // Firebase configuration
+        const firebaseConfig = {
+    apiKey: "AIzaSyA_VRV-2-R98qSjGe4Z8zO1W4MuHzM3Li4",
+    authDomain: "studyhub-f916e.firebaseapp.com",
+    projectId: "studyhub-f916e",
+    storageBucket: "studyhub-f916e.appspot.com",
+    messagingSenderId: "211281877834",
+    appId: "1:211281877834:web:9f1936334136daced3ffb3"
+  };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+        const auth = getAuth(app);
+        
+        // Get form elements
+        let EmailInp = document.getElementById("emailInp");
+        let PasswordInp = document.getElementById("passwordInp");
+        let ConfirmPasswordInp = document.getElementById("confirmPasswordInp");
+        let FnameInp = document.getElementById("fnameInp");
+        let LnameInp = document.getElementById("lnameInp");
+        let MainForm = document.getElementById("MainForm");
+        let registerBtn = document.getElementById("registerBtn");
+    
+        // Email validation regex
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+        // Function to handle registration
+        let RegisterUser = evt => {
+            evt.preventDefault();
+    
+            // Validate email format
+            if (!emailRegex.test(EmailInp.value)) {
+                alert("Invalid email format. Please enter a valid email.");
+                return;
+            }
+    
+            // Check if passwords match
+            if (PasswordInp.value !== ConfirmPasswordInp.value) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+    
+            // Show loading and disable the button
+            registerBtn.innerHTML = "Registering...";
+            registerBtn.disabled = true;
+    
+            // Create user with email and password in Firebase
+            createUserWithEmailAndPassword(auth, EmailInp.value, PasswordInp.value)
+            .then((credentials) => {
+                // Save user data in Firebase Database
+                set(ref(db, 'UsersAuthList/' + credentials.user.uid), {
+                    firstname: FnameInp.value,
+                    lastname: LnameInp.value
+                })
+                .then(() => {
+                    // alert('Redirecting to Login page...');
+                    window.location.href = "Login.html";
+                })
+                .catch((error) => {
+                    console.error('Failed to store user data. Please try again.');
+                    alert('Failed to store user data. Please try again.');
+    
+                    // Re-enable the button and reset text
+                    registerBtn.innerHTML = "Register";
+                    registerBtn.disabled = false;
+                });
+            })
+            .catch((error) => {
+                alert("Email is already registered. Please use another one.");
+                console.log(error.code);
+                console.log(error.message);
+    
+                // Re-enable the button and reset text
+                registerBtn.innerHTML = "Register";
+                registerBtn.disabled = false;
+            });
+        }
+    
+        // Add event listener for form submission
+        MainForm.addEventListener('submit', RegisterUser);
+        
+        
+// Disable right-click context menu
+document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+
+// Disable text selection
+document.addEventListener('selectstart', (event) => {
+    event.preventDefault();
+});
+
+// Disable specific keyboard shortcuts
+document.addEventListener('keydown', (event) => {
+    // Disable F12
+    if (event.key === 'F12') {
+        event.preventDefault();
+    }
+    // Disable Ctrl + Shift + I
+    if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+        event.preventDefault();
+    }
+    // Disable Ctrl + U (View Source)
+    if (event.ctrlKey && event.key === 'U') {
+        event.preventDefault();
+    }
+    // Disable Ctrl + Shift + J (Open Developer Tools in some browsers)
+    if (event.ctrlKey && event.shiftKey && event.key === 'J') {
+        event.preventDefault();
+    }
+});
+
+
+    </script>
+  </body>
+</html>

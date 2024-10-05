@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDYHUB|SQL</title>
+    <link rel="shortcut icon" href="img/BrandLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/ai.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+</style>
+
+   
+
+<body>
+    <div class="loader"></div>
+    <nav id="leftNavbar">
+        <a href="index.html">Home</a>
+        <a href="constraints.html">Constraints</a>
+        <a href="DDL.html">DDL</a>
+        <a href="DML.html">DML</a>
+        <a href="DCL.html">DCL</a>
+        <a href="TCL.html">TCL</a>
+        <a href="DQL.html">DQL</a>
+        <a href="Acidproperty.html">ACID PROPERITES</a>
+        <a href="Join.html">Joins</a>
+        <a href="Contact.html">Contact Us</a>
+      </nav>
+    
+    
+      <section class="container-fluid nb sticky-top">
+        <div class="head">
+            <h1 class="text-start" id="studyhub">Studyhub</h1>
+        </div>
+
+
+
+        <div class="d-flex align-items-center info">
+          <div class="dropdown">
+              <button class="text-light dropdown-toggle d-flex align-items-center user-initial" id="userOptionsButton" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="User Options">
+              User
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userOptionsButton">
+                  <li><a class="dropdown-item" href="login.html" id="signInLink">Sign In</a></li>
+                  <li><a class="dropdown-item" href="profile.html" id="profileLink" style="display: none;">Profile</a></li>
+                  <li><a class="dropdown-item" href="#" id="signoutbutton" style="display: none;" title="If You logout you need to signin">Logout</a></li>
+              </ul>
+          </div>
+      </div>
+    
+      
+      
+
+        <div id="studyhubToggle">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+
+       
+    </section>
+    <section>
+        <div id="popupModal" class="modal">
+            <div class="modal-content">
+              <!-- <span id="closeBtn" class="close">&times;</span> -->
+              <h2>Welcome to Studhub</h2>
+              <h6>**Read before Use the Website**</h6>
+              <ol>
+                <li>Notice: After 10 to 15 seconds, the website is intentionally designed to redirect you to the Login page to facilitate the login process.This behavior is not a bug.Thank you for your understanding!
+                </li>
+                  <li>
+                    This website is being developed using user feedback. We appreciate your input to help us improve the website.
+                      
+                  </li>
+                  <li>
+                    If you would like to join our team, please fill out the contact form, and we will get in touch with you.
+                  </li>
+              </ol>
+              <!-- <p>we have integrated with Aihubs.It is currently in beta version only, so kindly use it and provide feedback.</p> -->
+              <button id="continueBtn" class="btn">Continue</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="toast show" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Info Alert</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                "This is version 3 of the studyhub app we have integrated with <i class="fa-solid fa-robot"></i> Aihubs. It is currently in beta version only, so kindly use it and provide feedback."
+            </div>
+        </div>
+    </section>
+    <section class="container my-5 ">
+        <div class="row">
+            <div class="col-md-6 Mainhed">
+                <h1>Structured Query Language [SQL]</h1>
+                <p style="max-width: 450px;">
+                    Structured query language (SQL) is a programming language for storing and processing information
+                    in a relational database. When data is organized like a table, with rows and columns, SQL helps us do
+                    things like adding, updating, finding, and sorting that data. It's like the handy tool that makes sure
+                    all the information is well-organized and easy to work with, kind of like a digital librarian for data!
+                </p>
+                <section class="assistant mt-4">
+                    <div class="d-flex subhead">
+                     
+                        <button class="btn btn-primary talk" onclick="basecmd()">
+                            <i class="fa-solid fa-robot"></i> HubTalk
+                        </button>
+                    </div>
+                 
+                    <div class="content rounded mt-3">
+                        <div id="wordsbase" class="text-start"></div>
+                    </div>
+                </section>
+            </div>
+    
+            
+            <div class="col-md-6 d-flex justify-content-end">
+                <img src="img/Logo Image.png" alt="SQL Logo" class="img-fluid">
+            </div>
+        </div>
+    </section>
+    
+    
+
+   
+    
+
+    <section class="container my-5">
+        <div class="row">
+            
+            <div class="col-md-4">
+                <img src="img/OIP (5).jpg" alt="SQL Image" class="img-fluid">
+            </div>
+          
+            <div class="col-md-8 subhead">
+                <h1>Foundation of SQL</h1>
+                <p>
+                    In the 1970s, at IBM's San Jose Research Laboratory, two clever minds, Donald and
+                    Raymond, were on a mission. They were like digital pioneers tasked with creating a language to talk
+                    to and organize databases. Picture it like building a language for computers to manage information neatly.
+                </p>
+                <p>
+                    Their creation was initially called SEQUEL (Structured English Query Language). It was the magical
+                    tool that made handling data in tables so much easier. But, uh-oh, there was a little hiccup – trademark
+                    issues. So, they gave it a new name: SQL.
+                </p>
+                <p>
+                    Now, SQL became a big shot, a star even. It became the standard language for talking to databases in
+                    a way that everyone understood. Thanks to Donald and Raymond's work, organizing and chatting with
+                    databases became a breeze. And that's how our data lived happily ever after!
+                </p>
+    
+               
+                <section class="assistant mt-4">
+                    <div class="d-flex">
+                      
+                        <button class="btn btn-primary talk" onclick="aboutcmd()">
+                            <i class="fa-solid fa-robot"></i> HubTalk
+                        </button>
+                    </div>
+                   
+                    <div class="content rounded mt-3">
+                        <div id="wordsabout" class="text-start"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section class="container my-5 mt-5">
+        <div class="work text-center">
+            <h1>Working of SQL</h1>
+            <div class="mt-4">
+             
+                <div class="mb-4">
+                    <h5 class="con">SQL Query</h5>
+                </div>
+                <div class="mb-4">
+                    <i class="fa-solid fa-arrow-down con my-2"></i>
+                </div>
+    
+                
+                <div class="mb-4">
+                    <h5 class="con">Query Language Processor</h5>
+                    <small class="text-light" >- Parser + Optimizer</small>
+                </div>
+                <div class="mb-4">
+                    <i class="fa-solid fa-arrow-down con my-2"></i>
+                </div>
+    
+               
+                <div class="mb-4">
+                    <h5 class="con">DBMS Engine</h5>
+                    <small class="text-light">- File Manager + Transaction Manager</small>
+                </div>
+                <div class="mb-4">
+                    <i class="fa-solid fa-arrow-down con my-2"></i>
+                </div>
+    
+              
+                <div class="mb-4">
+                    <h5 class="con">Physical Database</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section class="container my-5 ">
+        <h1 class="text-center subhead2">Types of SQL Commands</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h5>1. Data Definition Language (DDL)</h5>
+                <p>Used for defining and managing all database objects (tables, indexes, etc.).</p>
+            </div>
+            <div class="col-md-6">
+                <h5>2. Data Manipulation Language (DML)</h5>
+                <p>Used for managing data within schema objects (insert, update, delete).</p>
+            </div>
+            <div class="col-md-6">
+                <h5>3. Data Control Language (DCL)</h5>
+                <p>Used to control access to data (grant, revoke).</p>
+            </div>
+            <div class="col-md-6">
+                <h5>4. Transaction Control Commands (TCL)</h5>
+                <p>Used for managing transactions (commit, rollback).</p>
+            </div>
+            <div class="col-md-6">
+                <h5>5. Data Query Language (DQL)</h5>
+                <p>Used to query data from the database (select).</p>
+            </div>
+        </div>
+    </section>
+    
+    
+
+   
+
+    <div id="flowchartContainer"></div>
+
+   <section>
+    <div class="chatbot-icon">
+        <button class="btn btn-primary loading-aiimg" id="toggleChatbot">Ai-Hubs
+            <img src="img/ai-assistant.png" alt="AI Assistant" style="width: 30px; height: 30px; margin-left: 5px;" class="loading-aiimg">
+        </button>
+    </div>
+    
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header d-flex justify-content-between align-items-center">
+            <h5>Ai-Hubs  <img src="img/ai-assistant.png" alt="AI Assistant" style="width: 30px; height: 30px; margin-left: 2px;"></h5>
+            <i class="fa-solid fa-x" id="closeChatbot"></i>
+        </div>
+        <div class="chatbot-body">
+            <textarea class="form-control mb-3" id="questionInput" cols="30" rows="5" placeholder="Ask an SQL querying question..."></textarea>
+            <div class="grid">
+                <button class="btn btn-primary" id="generateAnswerBtn">Generate Answer</button>
+                <button class="btn btn-secondary" id="resetBtn">Reset</button>
+            </div>
+            <div class="mt-4">
+                <h5>Answer:</h5>
+                <pre class="answer-box" id="answerOutput"></pre>
+            </div>
+        </div>
+    </div>
+   </section>
+
+
+   <!-- Footer -->
+
+  <footer>
+    <div class="text-center mt-5 bg-dark p-2">
+      <p class="fs-5">&COPY; Copyright Own by StudyHub</p>
+    </div>
+  </footer>
+
+<!-- Footer  -->
+    <script src="https://kit.fontawesome.com/def8c494cf.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+   <script src="js/voice.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script src="js/aihub.js"></script>
+   <script src="js/VSON.js"></script> 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+   crossorigin="anonymous"></script>
+  <script src="js/pop.js"></script>
+
+
+   <script>
+    let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+    let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+    let SignoutBtn;
+    let SignInLink = document.getElementById("signInLink");
+    let ProfileLink = document.getElementById("profileLink");
+    let chatbot = document.getElementById("toggleChatbot");
+    let logoutTimer;
+    let signUpRedirectTimer; // Timer for sign-up redirection
+    
+    const Signout = () => {
+        sessionStorage.removeItem("user-creds");
+        sessionStorage.removeItem("user-info");
+        updateDropdown(); 
+        window.location.href = "index.html"; // Redirect to home page after sign-out
+    };
+    
+    // Redirect to the sign-up page after 10 seconds if the user is not signed in
+    const redirectToSignUp = () => {
+        // Check again if the user is not logged in before starting the timer
+        if (!sessionStorage.getItem("user-creds")) {
+            signUpRedirectTimer = setTimeout(() => {
+                window.location.href = "Login.html"; // Redirect to sign-up page
+            }, 15000); // 15 seconds timer
+        }
+    };
+    
+    // Clear the sign-up redirection timer if the user logs in
+    const clearSignUpRedirectTimer = () => {
+        clearTimeout(signUpRedirectTimer); // Stop redirection to sign-up if user logs in
+    };
+    
+    const initializeLogoutTimer = () => {
+        clearTimeout(logoutTimer); 
+        if (sessionStorage.getItem("user-creds")) {
+            logoutTimer = setTimeout(() => {
+                Signout(); 
+            }, 5 * 60 * 1000); 
+        }
+    };
+    
+    const updateDropdown = () => {
+        if (!sessionStorage.getItem("user-creds")) {
+            SignInLink.style.display = 'block'; 
+            ProfileLink.style.display = 'none'; 
+            // chatbot.style.display = 'none';
+            if (SignoutBtn) SignoutBtn.style.display = 'none'; 
+            redirectToSignUp(); // Start sign-up redirect timer if not logged in
+        } else {
+            const userInfo = JSON.parse(sessionStorage.getItem("user-info"));
+            document.getElementById("userOptionsButton").textContent = userInfo.firstname; // Set initial in navbar button
+            SignInLink.style.display = 'none'; 
+            ProfileLink.style.display = 'block'; 
+            if (SignoutBtn) SignoutBtn.style.display = 'block'; 
+            clearSignUpRedirectTimer(); // Clear sign-up redirect when logged in
+            // initializeLogoutTimer(); 
+        }
+    };
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        SignoutBtn = document.getElementById("signoutbutton"); // Ensure the signout button is fetched after DOM is loaded
+        updateDropdown();
+
+        // Check if the user is logged in before adding event listeners for user activity
+        if (sessionStorage.getItem("user-creds")) {
+            // Reset inactivity timer on user activity
+            document.addEventListener("click", initializeLogoutTimer);
+            document.addEventListener("keydown", initializeLogoutTimer);
+            document.addEventListener("mousemove", initializeLogoutTimer);
+        }
+
+        // Add signout button listener after DOM content is loaded
+        if (SignoutBtn) {
+            SignoutBtn.addEventListener("click", Signout);
+        }
+    });
+
+    const saveLastPage = () => {
+        sessionStorage.setItem("last-page", window.location.href);
+    };
+    window.addEventListener('beforeunload', saveLastPage);
+
+    const onLoginSuccess = () => {
+        // sessionStorage.setItem("user-creds", JSON.stringify({username: 'user'})); // Example, set this dynamically
+        // sessionStorage.setItem("user-info", JSON.stringify({firstname: 'John'})); // Example, set this dynamically
+        updateDropdown(); 
+        redirectToLastPage(); 
+    };
+</script>
+
+
+
+
+
+</body>
+</html>

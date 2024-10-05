@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: rgb(12, 21, 28);
+  color: aliceblue;
+}
+
+/* Loader Styles */
+.loade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.415) no-repeat center;
+  transition: opacity 0.75s, visibility 1s;
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Navbar Styles */
+#leftNavbar {
+  position: fixed;
+  top: 0;
+  left: -200px; 
+  width: 200px;
+  height: 100%; 
+  background-color: rgba(36, 40, 37, 0.85);
+  padding-top: 80px; 
+  transition: left 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 1000; 
+  overflow-y: auto;
+}
+
+#leftNavbar a {
+  display: block;
+  color: aliceblue;
+  text-decoration: none;
+  padding: 15px 20px; 
+  text-align: left; 
+  font-size: 20px;
+  font-weight: 900;
+  border-bottom: 2px solid gray; 
+}
+
+#leftNavbar a:hover {
+  border-left: 4px solid red; 
+  padding-left: 16px;
+  transition: all 0.3s; 
+}
+
+/* Navbar Styles for Mobile View */
+@media (max-width: 768px) {
+  #leftNavbar {
+    padding-top: 100px; /* Adjusted padding */
+  }
+  
+  #leftNavbar a {
+    padding: 30px 15px 15px 15px; /* Adjust padding for mobile */
+    font-size: 18px; /* Slightly smaller font size */
+  }
+  #studyhub{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 30px;
+}
+}
+
+@media (min-width: 769px) {
+  #leftNavbar a:hover {
+    border-left: 4px solid red; /* Highlight on hover */
+    padding-left: 16px; /* Slightly move text to the right on hover */
+    transition: all 0.3s; /* Smooth transition */
+  }
+  #studyhubToggle{
+    display: none;
+}
+}
+
+
+#studyhub {
+  cursor: pointer;
+}
+
+#studyhubToggle {
+  font-size: 2em;
+}
+
+/* Navigation Bar Styles */
+.nb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(36, 40, 37, 0.9);
+  position: sticky;
+  top: 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px 20px; /* Add some padding for aesthetics */
+}
+
+.nb h1 {
+  font-size: 2.5em; /* Adjust font size */
+  font-weight: 300; /* Lighter weight for better readability */
+}
+
+.sub {
+  font-size: 1.2em; /* Smaller size for subtitle */
+  margin-left: -15px; /* Adjust margin */
+}
+
+/* Main Headings */
+.Mainhed h1,
+.work h1 {
+  font-size: 4.5em;
+  font-weight: 400;
+  max-width: 4em;
+}
+
+.tithed{
+  text-align: center;
+  font-size: 4em;
+  font-weight: 200;
+  /* text-decoration: 2px underline red; */
+  padding: 20px 0;
+}
+
+.subhead h1,
+.subhead2 {
+  font-size: 4em;
+  font-weight: 400;
+}
+
+.head h1 {
+  font-size: 2.5em;
+  font-weight: 200;
+  text-align: center;
+}
+
+.head p {
+  font-size: 25px;
+  text-align: justify;
+  margin-top: 1em;
+  font-weight: 200;
+}
+
+.subhead h2 {
+  margin-top: 1em;
+  font-size: 3em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.subhead ol {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: justify;
+  list-style-type: none;
+  padding: 2em;
+}
+
+.subhead ol li a {
+  color: black;
+  text-decoration: none;
+  padding: 2em;
+  font-size: 2em;
+  font-weight: 100;
+}
+
+/* Command Section Styles */
+.ddlcmd {
+  margin-top: 0em;
+}
+
+.ddlcmd h4 {
+  font-size: 2em;
+  font-weight: 300;
+  border-bottom: 2px solid red;
+  transition: all 2s;
+}
+
+.ddlcmd p,
+.ddlcmd h6 {
+  font-size: 20px;
+  margin-bottom: 1em;
+  font-weight: 200;
+}
+
+.ddlcmd summary{
+font-size: 20px;
+}
+/* Copy Text Section Styles */
+.copy-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.copy-text input.text {
+  padding: 10px;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background-color: #555;
+  border-radius: 15px;
+  flex: 1;
+  margin-right: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.copy-text button {
+  padding: 5px 10px;
+  background: #0348f4;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.copy-text button.copied {
+  background: #494747;
+}
+
+.copy-text button.copied::before {
+  content: "Copied!";
+  position: absolute;
+  top: -50px;
+  right: 0px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.copy-text button.copied::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  display: none;
+}
+
+/* Fade Out Animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Input Styles */
+input[type="text"] {
+  padding: 10px;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background-color: #494747;
+  border-radius: 15px;
+  width: 100%; /* Full width */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"][readonly] {
+  background-color: #777;
+  cursor: default;
+}
+
+/* Table Styles */
+table {
+  color: aliceblue;
+}
+
+/* Quiz Styles */
+#quiz {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(30, 30, 30);
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 2px 4px 10px rgba(241, 238, 238, 0.1);
+  
+}
+
+h2,
+p {
+  color: aliceblue;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.qustlist{
+  list-style: none;
+  margin: 2em -2em;
+}
+
+.answer-info {
+  margin-bottom: 20px;
+}
+
+.answer-info p {
+  margin-bottom: 5px;
+}
+
+.correct-answer {
+  color: green;
+}
+
+.incorrect-answer {
+  color: red;
+}
+
+/* Subscript Styles */
+sub {
+  font-size: 20px;
+  margin-left: -12.5em;
+  position: relative;
+  top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Button Styles */
+button {
+  outline: 0;
+  background-color: blue;
+  color: aliceblue;
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0044cc;
+}
+
+/* Assistant Styles */
+.assistant {
+  margin-bottom: 1em;
+}
+
+/* Styled Output Styles */
+.styled-output {
+  font-family: 'Courier New', Courier, monospace; 
+  background-color: #494747; 
+  padding: 10px; 
+  border-radius: 4px; 
+  white-space: pre-wrap; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .Mainhed h1, .work h1 {
+    font-size: 3em;
+  }
+
+  .subhead h2 {
+    font-size: 2.5em;
+  }
+
+  .subhead ol {
+    font-size: 18px;
+  }
+
+  .ddlcmd h4 {
+    font-size: 1.5em;
+  }
+  .tithed{
+    font-size: 3.5em;
+    font-weight: 500;
+    text-align: justify;
+    text-decoration: none;
+  }
+  .titpara{
+    font-size: 1.5em;
+    font-weight: 200;
+  }
+}
+
+.content{
+  margin-top: 20px;
+}
+
+#studyhub{
+  font-weight: 500;
+}
+.info >.dropdown >button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  margin: 0 0em 0 4em;
+  cursor: pointer;
+  
+  }
+  .info >.dropdown >.dropdown-menu{
+   text-align: center;
+   padding: 1px 2em;
+  }
+  .dropdown-item{
+      margin: 0;
+      border-bottom: 2px solid rgb(10, 11, 10);
+      height: 40px;
+  }
+  
+.butt{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -15em;
+}
+.butt a{
+  color: aliceblue;
+  text-decoration: none;
+}
