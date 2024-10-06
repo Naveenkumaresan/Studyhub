@@ -191,8 +191,6 @@ createUserWithEmailAndPassword(auth, EmailInp.value, PasswordInp.value)
         .catch((error) => {
             console.error('Failed to store user data. Please try again.');
             alert('Failed to store user data. Please try again.');
-
-            // Re-enable the button and reset text
             registerBtn.innerHTML = "Register";
             registerBtn.disabled = false;
         });
