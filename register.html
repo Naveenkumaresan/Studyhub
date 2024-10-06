@@ -177,35 +177,41 @@
             registerBtn.disabled = true;
     
             // Create user with email and password in Firebase
-            createUserWithEmailAndPassword(auth, EmailInp.value, PasswordInp.value)
-            .then((credentials) => {
-                // Save user data in Firebase Database
-                set(ref(db, 'UsersAuthList/' + credentials.user.uid), {
-                    firstname: FnameInp.value,
-                    lastname: LnameInp.value
-                })
-                .then(() => {
-                    // alert('Redirecting to Login page...');
-                    window.location.href = "Login.html";
-                })
-                .catch((error) => {
-                    console.error('Failed to store user data. Please try again.');
-                    alert('Failed to store user data. Please try again.');
-    
-                    // Re-enable the button and reset text
-                    registerBtn.innerHTML = "Register";
-                    registerBtn.disabled = false;
-                });
-            })
-            .catch((error) => {
-                alert("Email is already registered. Please use another one.");
-                console.log(error.code);
-                console.log(error.message);
-    
-                // Re-enable the button and reset text
-                registerBtn.innerHTML = "Register";
-                registerBtn.disabled = false;
-            });
+           // Create user with email and password in Firebase
+createUserWithEmailAndPassword(auth, EmailInp.value, PasswordInp.value)
+    .then((credentials) => {
+        // Save user data in Firebase Database
+        set(ref(db, 'UsersAuthList/' + credentials.user.uid), {
+            firstname: FnameInp.value,
+            lastname: LnameInp.value
+        })
+        .then(() => {
+            window.location.href = "Login.html";
+        })
+        .catch((error) => {
+            console.error('Failed to store user data. Please try again.');
+            alert('Failed to store user data. Please try again.');
+
+            // Re-enable the button and reset text
+            registerBtn.innerHTML = "Register";
+            registerBtn.disabled = false;
+        });
+    })
+    .catch((error) => {
+        // Handle different error codes
+        if (error.code === 'auth/email-already-in-use') {
+            alert("This email is already registered. Please try a different email or login.");
+        } else {
+            alert("Error: " + error.message);
+        }
+        console.log(error.code);
+        console.log(error.message);
+
+        // Re-enable the button and reset text
+        registerBtn.innerHTML = "Register";
+        registerBtn.disabled = false;
+    });
+
         }
     
         // Add event listener for form submission
