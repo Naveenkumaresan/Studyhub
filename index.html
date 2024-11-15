@@ -38,7 +38,7 @@
 
 
 
-        <div class="d-flex align-items-center info">
+<!--         <div class="d-flex align-items-center info">
           <div class="dropdown">
               <button class="text-light dropdown-toggle d-flex align-items-center user-initial" id="userOptionsButton" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="User Options">
               User
@@ -49,7 +49,7 @@
                   <li><a class="dropdown-item" href="#" id="signoutbutton" style="display: none;" title="If You logout you need to signin">Logout</a></li>
               </ul>
           </div>
-      </div>
+      </div> -->
     
       
       
@@ -315,14 +315,14 @@
     };
     
     // Redirect to the sign-up page after 10 seconds if the user is not signed in
-    const redirectToSignUp = () => {
-        // Check again if the user is not logged in before starting the timer
-        if (!sessionStorage.getItem("user-creds")) {
-            signUpRedirectTimer = setTimeout(() => {
-                window.location.href = "Login.html"; // Redirect to sign-up page
-            }, 1500000); // 15 seconds timer 15000
-        }
-    };
+    // const redirectToSignUp = () => {
+    //     // Check again if the user is not logged in before starting the timer
+    //     if (!sessionStorage.getItem("user-creds")) {
+    //         signUpRedirectTimer = setTimeout(() => {
+    //             window.location.href = "Login.html"; // Redirect to sign-up page
+    //         }, 1500000); // 15 seconds timer 15000
+    //     }
+    // };
     
     // Clear the sign-up redirection timer if the user logs in
     const clearSignUpRedirectTimer = () => {
