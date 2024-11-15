@@ -67,8 +67,8 @@
               <h2>Welcome to Studhub</h2>
               <h6>**Read before Use the Website**</h6>
               <ol>
-                <li>Notice: After 10 to 15 seconds, the website is intentionally designed to redirect you to the Login page to facilitate the login process (if you not login).This behavior is not a bug.Thank you for your understanding!
-                </li>
+<!--                 <li>Notice: After 10 to 15 seconds, the website is intentionally designed to redirect you to the Login page to facilitate the login process (if you not login).This behavior is not a bug.Thank you for your understanding!
+                </li> -->
                   <li>
                     This website is being developed using user feedback. We appreciate your input to help us improve the website.
                       
@@ -320,7 +320,7 @@
         if (!sessionStorage.getItem("user-creds")) {
             signUpRedirectTimer = setTimeout(() => {
                 window.location.href = "Login.html"; // Redirect to sign-up page
-            }, 15000); // 15 seconds timer
+            }, 1500000); // 15 seconds timer 15000
         }
     };
     
