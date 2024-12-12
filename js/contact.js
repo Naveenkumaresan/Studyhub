@@ -10,10 +10,10 @@ form.addEventListener('submit', e => {
       .then(response => {
         if (response.ok) {
           alert("Thanks for your feedback! 😊");
-          // msg.innerHTML = "Your feedback has been submitted. Thank you for taking the time to provide it 😊";
-          // setTimeout(function(){
-          //   msg.innerHTML = "";
-          // },2000)
+          msg.innerHTML = "Your feedback has been submitted. Thank you for taking the time to provide it 😊";
+          setTimeout(function(){
+            msg.innerHTML = "";
+          },2000)
           form.reset();
         } else {
           throw new Error('Network response was not ok.');
