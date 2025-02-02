@@ -85,7 +85,7 @@ async function generateAnswer() {
           answerOutput.textContent = disclaimer + response;
       } else {
           const response = await axios.post(
-              "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDuxlH8JYBKW_KBgWPjGcsJJ6vjpAUTCsk",
+              "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAx_UA7BMYyO128wUK2FsRdQcYb1Ld4A94",
               { contents: [{ parts: [{ text: normalizedQuestion }] }] }
           );
           const aiGeneratedText = response.data.candidates[0].content.parts[0].text;
